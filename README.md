@@ -1,6 +1,6 @@
-# fork
+# mgm-engine fork
 
-Includes adapted versions of the MGM AEAD scheme with AES block cipher, CLMUL intrinsics and NMH/2BO hash functions
+Includes a variety of implementations of the Russian MGM AEAD scheme for OpenSSL, performance optimised for CLMUL and AES-NI intrinsics as well as some adaptions to the hashing function, including NMH and 2BO
 Includes many different versions of algorithms for investigation of performance impact for bachelors thesis
 
 You are advised to clone gost-engine and cherry-pick desired changes
