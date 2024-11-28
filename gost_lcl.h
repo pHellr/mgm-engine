@@ -359,6 +359,20 @@ extern GOST_cipher grasshopper_cfb_cipher;
 extern GOST_cipher grasshopper_ofb_cipher;
 extern GOST_cipher grasshopper_ctr_cipher;
 extern GOST_cipher grasshopper_mgm_cipher;
+extern GOST_cipher grasshopper_mgm_b_cipher;
+extern GOST_cipher grasshopper_mgm_c_cipher;
+extern GOST_cipher grasshopper_mgm_cl_cipher;
+extern GOST_cipher grasshopper_mgm_cln_cipher;
+extern GOST_cipher grasshopper_mgm_clo_cipher;
+extern GOST_cipher grasshopper_mgm_clno_cipher;
+extern GOST_cipher grasshopper_mgm_a_cipher;
+extern GOST_cipher grasshopper_mgm_ab_cipher;
+extern GOST_cipher grasshopper_mgm_ad_cipher;
+extern GOST_cipher grasshopper_mgm_ac_cipher;
+extern GOST_cipher grasshopper_mgm_acl_cipher;
+extern GOST_cipher grasshopper_mgm_acln_cipher;
+extern GOST_cipher grasshopper_mgm_aclo_cipher;
+extern GOST_cipher grasshopper_mgm_aclno_cipher;
 extern GOST_cipher grasshopper_ctr_acpkm_cipher;
 extern GOST_cipher grasshopper_ctr_acpkm_omac_cipher;
 extern GOST_cipher magma_kexp15_cipher;
@@ -415,6 +429,20 @@ typedef struct gost_nid_job GOST_NID_JOB;
 
 extern GOST_NID_JOB magma_mgm_NID;
 extern GOST_NID_JOB kuznyechik_mgm_NID;
+extern GOST_NID_JOB kuznyechik_mgm_b_NID;
+extern GOST_NID_JOB kuznyechik_mgm_c_NID;
+extern GOST_NID_JOB kuznyechik_mgm_cl_NID;
+extern GOST_NID_JOB kuznyechik_mgm_cln_NID;
+extern GOST_NID_JOB kuznyechik_mgm_clo_NID;
+extern GOST_NID_JOB kuznyechik_mgm_clno_NID;
+extern GOST_NID_JOB kuznyechik_mgm_a_NID;
+extern GOST_NID_JOB kuznyechik_mgm_ad_NID;
+extern GOST_NID_JOB kuznyechik_mgm_ab_NID;
+extern GOST_NID_JOB kuznyechik_mgm_ac_NID;
+extern GOST_NID_JOB kuznyechik_mgm_acl_NID;
+extern GOST_NID_JOB kuznyechik_mgm_acln_NID;
+extern GOST_NID_JOB kuznyechik_mgm_aclo_NID;
+extern GOST_NID_JOB kuznyechik_mgm_aclno_NID;
 
 #endif
 /* vim: set expandtab cinoptions=\:0,l1,t0,g0,(0 sw=4 : */

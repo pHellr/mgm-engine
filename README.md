@@ -1,3 +1,10 @@
+# fork
+
+Includes adapted versions of the MGM AEAD scheme with AES block cipher, CLMUL intrinsics and NMH/2BO hash functions
+Includes many different versions of algorithms for investigation of performance impact for bachelors thesis
+
+You are advised to clone gost-engine and cherry-pick desired changes
+
 # engine
 
 A reference implementation of the Russian GOST crypto algorithms for OpenSSL

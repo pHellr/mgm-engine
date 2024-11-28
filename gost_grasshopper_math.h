@@ -1,5 +1,6 @@
 /*
  * Maxim Tishkov 2016
+ * Pascal Heller 2024
  * This file is distributed under the same license as OpenSSL
  */
 
@@ -11,6 +12,7 @@ extern "C" {
 #endif
 
 #include "gost_grasshopper_defines.h"
+#include <x86intrin.h>
 
 #if defined(__SSE__) || defined(__SSE2__) || defined(__SSE2_MATH__) || defined(__SSE3__) || defined(__SSE_MATH__) \
  || defined(__SSE4_1__)|| defined(__SSE4_2__)|| defined(__SSSE3__)
@@ -92,6 +94,18 @@ static GRASSHOPPER_INLINE void grasshopper_plus128(grasshopper_w128_t* result, c
                                                const grasshopper_w128_t* y) {
     grasshopper_copy128(result, x);
     grasshopper_append128(result, y);
+}
+
+static GRASSHOPPER_INLINE void grasshopper_plus128_clmul(__m128i* result, const __m128i* x,
+                                                    const __m128i* y) {
+    *result = _mm_xor_si128(*x, *y);
+}
+
+static GRASSHOPPER_INLINE void grasshopper_plus128_clmul_lr(__m128i* result, const __m128i* x,
+                                                    const __m128i* y) {
+    *result = _mm_xor_si128(*x, *y);
+    *(result+1) = _mm_xor_si128(*(x+1), *(y+1));
+    *(result+2) = _mm_xor_si128(*(x+2), *(y+2));
 }
 
 // result & x must be different

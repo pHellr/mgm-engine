@@ -280,6 +280,20 @@ static const OSSL_PARAM *known_magma_mgm_cipher_params;
 static const OSSL_PARAM *known_grasshopper_ctr_acpkm_cipher_params;
 static const OSSL_PARAM *known_grasshopper_ctr_acpkm_omac_cipher_params;
 static const OSSL_PARAM *known_grasshopper_mgm_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_b_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_c_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_cl_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_cln_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_clo_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_clno_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_a_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_ab_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_ad_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_ac_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_acl_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_acln_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_aclo_cipher_params;
+static const OSSL_PARAM *known_grasshopper_mgm_aclno_cipher_params;
 /*
  * These are named like the EVP_CIPHER templates in gost_crypt.c, with the
  * added suffix "_functions".  Hopefully, that makes it easy to find the
@@ -328,6 +342,20 @@ MAKE_FUNCTIONS(magma_mgm_cipher);
 MAKE_FUNCTIONS(grasshopper_ctr_acpkm_cipher);
 MAKE_FUNCTIONS(grasshopper_ctr_acpkm_omac_cipher);
 MAKE_FUNCTIONS(grasshopper_mgm_cipher);
+MAKE_FUNCTIONS(grasshopper_mgm_b_cipher);
+MAKE_FUNCTIONS(grasshopper_mgm_c_cipher);
+MAKE_FUNCTIONS(grasshopper_mgm_cl_cipher);
+MAKE_FUNCTIONS(grasshopper_mgm_cln_cipher);
+MAKE_FUNCTIONS(grasshopper_mgm_clo_cipher);
+MAKE_FUNCTIONS(grasshopper_mgm_clno_cipher); 
+MAKE_FUNCTIONS(grasshopper_mgm_a_cipher);    
+MAKE_FUNCTIONS(grasshopper_mgm_ab_cipher);    
+MAKE_FUNCTIONS(grasshopper_mgm_ad_cipher);    
+MAKE_FUNCTIONS(grasshopper_mgm_ac_cipher);   
+MAKE_FUNCTIONS(grasshopper_mgm_acl_cipher);  
+MAKE_FUNCTIONS(grasshopper_mgm_acln_cipher); 
+MAKE_FUNCTIONS(grasshopper_mgm_aclo_cipher); 
+MAKE_FUNCTIONS(grasshopper_mgm_aclno_cipher);
 
 /* The OSSL_ALGORITHM for the provider's operation query function */
 const OSSL_ALGORITHM GOST_prov_ciphers[] = {
@@ -353,6 +381,20 @@ const OSSL_ALGORITHM GOST_prov_ciphers[] = {
     { SN_kuznyechik_ctr_acpkm_omac ":1.2.643.7.1.1.5.2.2", NULL,
       grasshopper_ctr_acpkm_omac_cipher_functions },
     { "kuznyechik-mgm", NULL, grasshopper_mgm_cipher_functions },
+    { "kuznyechik-mgm-b", NULL, grasshopper_mgm_b_cipher_functions },
+    { "kuznyechik-mgm-c", NULL, grasshopper_mgm_c_cipher_functions },
+    { "kuznyechik-mgm-cl", NULL, grasshopper_mgm_cl_cipher_functions },
+    { "kuznyechik-mgm-cln", NULL, grasshopper_mgm_cln_cipher_functions },
+    { "kuznyechik-mgm-clo", NULL, grasshopper_mgm_clo_cipher_functions },
+    { "kuznyechik-mgm-clno", NULL, grasshopper_mgm_clno_cipher_functions },
+    { "kuznyechik-mgm-a", NULL, grasshopper_mgm_a_cipher_functions }, 
+    { "kuznyechik-mgm-ab", NULL, grasshopper_mgm_ab_cipher_functions },
+    { "kuznyechik-mgm-ad", NULL, grasshopper_mgm_ad_cipher_functions }, 
+    { "kuznyechik-mgm-ac", NULL, grasshopper_mgm_ac_cipher_functions },
+    { "kuznyechik-mgm-acl", NULL, grasshopper_mgm_acl_cipher_functions },
+    { "kuznyechik-mgm-acln", NULL, grasshopper_mgm_acln_cipher_functions },
+    { "kuznyechik-mgm-aclo", NULL, grasshopper_mgm_aclo_cipher_functions },
+    { "kuznyechik-mgm-aclno", NULL, grasshopper_mgm_aclno_cipher_functions },
 #if 0                           /* Not yet implemented */
     { SN_magma_kexp15 ":1.2.643.7.1.1.7.1.1", NULL,
       magma_kexp15_cipher_functions },
@@ -381,6 +423,20 @@ void GOST_prov_deinit_ciphers(void) {
         &grasshopper_ctr_acpkm_cipher,
         &grasshopper_ctr_acpkm_omac_cipher,
         &grasshopper_mgm_cipher,
+        &grasshopper_mgm_b_cipher,
+        &grasshopper_mgm_c_cipher,
+        &grasshopper_mgm_cl_cipher,
+        &grasshopper_mgm_cln_cipher,
+        &grasshopper_mgm_clo_cipher,
+        &grasshopper_mgm_clno_cipher,
+        &grasshopper_mgm_ad_cipher,
+        &grasshopper_mgm_ab_cipher,
+        &grasshopper_mgm_a_cipher,
+        &grasshopper_mgm_ac_cipher,
+        &grasshopper_mgm_acl_cipher,
+        &grasshopper_mgm_acln_cipher,
+        &grasshopper_mgm_aclo_cipher,
+        &grasshopper_mgm_aclno_cipher,
     };
     size_t i;
 #define elems(l) (sizeof(l) / sizeof(l[0]))
